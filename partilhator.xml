@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="content" method="upgrade">
+	<name>plg_content_partilhator</name>
+	<author>José A. Cidre Bardelás</author>
+	<creationDate>08/2011</creationDate>
+	<copyright>Copyright (C) 2011-2013 Joomla Empresa and José A. Cidre Bardelás. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>info@joomlaempresa.es</authorEmail>
+	<authorUrl>http://joomlaempresa.es</authorUrl>
+	<version>2.0.2</version>
+	<description>PLG_CONTENT_PARTILHATOR_XML_DESCRIPTION</description>
+	<updateservers>
+		<server type="extension" priority="1" name="Partilhator Updates"><![CDATA[http://www.joomlaempresa.es/index.php?option=com_ars&view=update&task=stream&format=xml&id=1]]></server>
+	</updateservers>
+	<files>
+		<filename plugin="partilhator">partilhator.php</filename>
+		<filename>index.html</filename>
+		<folder>partilha_imagens</folder>
+		<folder>elements</folder>
+	</files>
+	<languages folder="idiomas">
+		<language tag="gl-ES">gl-ES.plg_content_partilhator.ini</language>
+		<language tag="gl-ES">gl-ES.plg_content_partilhator.sys.ini</language>
+		<language tag="en-GB">en-GB.plg_content_partilhator.ini</language>
+		<language tag="en-GB">en-GB.plg_content_partilhator.sys.ini</language>
+		<language tag="es-ES">es-ES.plg_content_partilhator.ini</language>
+		<language tag="es-ES">es-ES.plg_content_partilhator.sys.ini</language>
+		<language tag="ca-ES">ca-ES.plg_content_partilhator.ini</language>
+		<language tag="ca-ES">ca-ES.plg_content_partilhator.sys.ini</language>
+		<language tag="pt-BR">pt-BR.plg_content_partilhator.ini</language>
+		<language tag="pt-BR">pt-BR.plg_content_partilhator.sys.ini</language>
+		<language tag="pt-PT">pt-PT.plg_content_partilhator.ini</language>
+		<language tag="pt-PT">pt-PT.plg_content_partilhator.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/plugins/content/partilhator/elements">
+			<fieldset name="basic">
+				<field type="title" default="DISPLAY_TIT" />
+				<field name="excluir_categorias" type="text" default="" label="EXCLUDE_CAT" description="EXCLUDE_CAT_DESC" />
+				<field name="excluir_artigos" type="text" default="" label="EXCLUDE_ART" description="EXCLUDE_ART_DESC" />
+				<field type="title" default="POSITION_TIT" />
+				<field name="posicom" type="list" default="1" label="POSITION" description="POSITION_DESC">
+					<option value="topo">TOP_OP</option>
+					<option value="pe">BOTTOM_OP</option>
+					<option value="esquerda">LEFT_OP</option>
+					<option value="direita">RIGHT_OP</option>
+				</field>
+				<field name="alto_bloco" type="text" size="4" default="30" label="BLOCK_HEIGHT" description="BLOCK_HEIGHT_DESC" />
+				<field name="margem_topo" type="text" size="4" default="3" label="MARGIN_TOP" description="MARGIN_TOP_DESC" />
+				<field name="margem_pe" type="text" size="4" default="3" label="MARGIN_BOTTOM" description="MARGIN_BOTTOM_DESC" />
+				<field name="margem_esquerda" type="text" size="4" default="3" label="MARGIN_LEFT" description="MARGIN_LEFT_DESC" />
+				<field name="margem_direita" type="text" size="4" default="3" label="MARGIN_RIGHT" description="MARGIN_RIGHT_DESC" />
+				<field name="tamanho_icones" type="list" default="24" label="ICONS_SIZE" description="ICONS_SIZE_DESC">
+					<option value="18">18X18</option>
+					<option value="24">24X24</option>
+				</field>
+				<field name="alinhamento_icones" type="list" default="left" label="ICONS_ALIGN" description="ICONS_ALIGN_DESC">
+					<option value="left">LEFT</option>
+					<option value="center">CENTER</option>
+					<option value="right">RIGHT</option>
+				</field>
+				<field name="espaco_icones" type="text"  default="5" label="SPACE_BETWEEN_ICONS" description="SPACE_BETWEEN_ICONS_DESC" />
+				<field type="title" default="ICONS_TIT" />
+				<field name="ver_chuza" type="list" default="1" label="SHOW_CHUZA" description="SHOW_CHUZA_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_domelhor" type="list" default="1" label="SHOW_DOMELHOR" description="SHOW_DOMELHOR_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_buzz" type="list" default="0" label="SHOW_BUZZ" description="SHOW_BUZZ_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="modo_buzz" type="list" default="0" label="BUZZ_MODE" description="BUZZ_MODE_DESC">
+					<option value="1">G_READER</option>
+					<option value="0">G_BUZZ</option>
+				</field>
+				<field name="longo_buzz" type="text" default="1500" label="SNIPPET_LIMIT" description="SNIPPET_LIMIT_DESC" />
+				<field name="ver_digg" type="list" default="1" label="SHOW_DIGG" description="SHOW_DIGG_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_facebook" type="list" default="1" label="SHOW_FACEBOOK" description="SHOW_FACEBOOK_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_facebook_like" type="list" default="1" label="SHOW_FACEBOOKLIKE" description="SHOW_FACEBOOKLIKE_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_latafanera" type="list" default="1" label="SHOW_TAFANERA" description="SHOW_TAFANERA_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_zabaldu" type="list" default="1" label="SHOW_ZABALDU" description="SHOW_ZABALDU_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_aupatu" type="list" default="1" label="SHOW_AUPATU" description="SHOW_AUPATU_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="idioma_aupatu" type="list" default="eu" label="AUPATU_LANG" description="AUPATU_LANG_DESC">
+					<option value="eu">BASQUE</option>
+					<option value="es">SPANISH</option>
+				</field>
+				<field name="ver_tuenti" type="list" default="1" label="SHOW_TUENTI" description="SHOW_TUENTI_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_meneame" type="list" default="1" label="SHOW_MENEAME" description="SHOW_MENEAME_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_twitter" type="list" default="1" label="SHOW_TWITTER" description="SHOW_TWITTER_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="mensagem_twitter" type="text"  default="" label="TWITTER_STATUS_MSG" description="TWITTER_STATUS_MSG_DESC" />
+				<field name="separator" type="list" default=":" label="TWITTER_SEP" description="TWITTER_SEP_DESC">
+					<option value=":"> : </option>
+					<option value="/"> / </option>
+					<option value="|"> | </option>
+					<option value="-"> - </option>
+					<option value="--"> -- </option>
+					<option value=","> , </option>
+				</field>
+				<field name="sitio_longo_twitter" type="text"  default="Web" label="TWITTER_LONG_NAME" description="TWITTER_LONG_NAME_DESC" />
+				<field name="sitio_curto_twitter" type="text"  default="Web" label="TWITTER_SHORT_NAME" description="TWITTER_SHORT_NAME_DESC" />
+				<field name="ver_twitter_conta" type="list" default="1" label="SHOW_TWITTERCOUNT" description="SHOW_TWITTERCOUNT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="ver_pinit" type="list" default="1" label="SHOW_PINIT" description="SHOW_PINIT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="ver_cabozo" type="list" default="1" label="SHOW_CABOZO" description="SHOW_CABOZO_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_inshare" type="list" default="1" label="SHOW_INSHARE" description="SHOW_INSHARE_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="ver_googleplus" type="list" default="1" label="SHOW_GPLUS" description="SHOW_GPLUS_DESC">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+				<field name="local_googleplus" type="text" size="8" default="" label="GPLUS_LOCALE" description="GPLUS_LOCALE_DESC" />
+				<field name="amplo_googleplus" type="text" size="4" default="" label="GPLUS_WIDTH" description="GPLUS_WIDTH_DESC" />
+				<field type="title" default="FACEBOOK_TIT" />
+				<field name="local_facebook" type="text" size="8" default="" label="FACEBOOK_LOCALE" description="FACEBOOK_LOCALE_DESC" />
+				<field name="show_send_facebook" type="list" default="1" label="FACEBOOK_SHOWSEND" description="FACEBOOK_SHOWSEND_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="layout_facebook" type="list" default="1" label="FACEBOOK_LAYOUT" description="FACEBOOK_LAYOUT_DESC">
+					<option value="standard">STANDARD</option>
+					<option value="button_count">BUTTON_COUNT</option>
+					<option value="box_count">BOX_COUNT</option>
+				</field>
+				<field name="color_facebook" type="list" default="1" label="FACEBOOK_COLOR" description="FACEBOOK_COLOR_DESC">
+					<option value="light">LIGHT</option>
+					<option value="dark">DARK</option>
+				</field>
+				<field name="width_facebook" type="text" size="8" default="450" label="FACEBOOK_WIDTH" description="FACEBOOK_WIDTH_DESC" />
+				<field name="show_faces_facebook" type="list" default="1" label="FACEBOOK_SHOWFACES" description="FACEBOOK_SHOWFACES_DESC">
+					<option value="1">PYES</option>
+					<option value="0">PNO</option>
+				</field>
+				<field name="verb_facebook" type="list" default="like" label="FACEBOOK_VERB" description="FACEBOOK_VERB_DESC">
+					<option value="like">LIKE</option>
+					<option value="recommend">RECOMMEND</option>
+				</field>
+				<field name="top_margin_facebook" type="text" size="8" default="-4" label="FACEBOOK_TOPPOS" description="FACEBOOK_TOPPOS_DESC" />
+				<field type="title" default="TWITTER_TIT" />
+				<field name="top_margin_twitter" type="text" size="8" default="-2" label="TWITTER_TOPPOS" description="TWITTER_TOPPOS_DESC" />
+				<field type="title" default="PINIT_TIT" />
+				<field name="pinit_count" type="list" default="horizontal" label="PINIT_COUNT" description="PINIT_COUNT_DESC">
+					<option value="horizontal">HORIZONTAL</option>
+					<option value="vertical">VERTICAL</option>
+					<option value="none">NO_COUNT</option>
+				</field>
+				<field name="top_margin_pinit" type="text" size="8" default="2" label="PINIT_TOPMARGIN" description="PINIT_TOPMARGIN_DESC" />
+				<field name="bottom_margin_pinit" type="text" size="8" default="2" label="PINIT_BOTTOMMARGIN" description="PINIT_BOTTOMMARGIN_DESC" />
+				<field type="title" default="ORDER_TIT" />
+				<field name="ordenar_icones" type="list" default="0" label="ICONS_REORDER" description="ICONS_REORDER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="ordem_icones" type="text"  default="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16" label="ICONS_ORDER" description="ICONS_ORDER_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
+ 
