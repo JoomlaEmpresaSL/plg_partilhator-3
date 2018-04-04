@@ -41,6 +41,11 @@ class plgContentpartilhator extends JPlugin {
 		if (JRequest::getVar('view') == "article" && property_exists($article, 'id') && property_exists($article,'catid')) {
 			if (JPluginHelper::isEnabled('content', 'partilhator') == false) 
 				return;
+			if ($this->params->def('incluir_categorias')) {
+				$idSecom = explode(',', str_replace(' ', '', $this->params->def('incluir_categorias')));
+				if (!in_array($article->catid, $idSecom)) 
+					return;
+			}
 			if ($this->params->def('excluir_categorias')) {
 				$idSecom = explode(',', str_replace(' ', '', $this->params->def('excluir_categorias')));
 				if (in_array($article->catid, $idSecom)) 
@@ -96,7 +101,7 @@ class plgContentpartilhator extends JPlugin {
 #partilhator img {border: none; margin: 0; padding: 0;}
 #partilhator a, #partilhator a:hover, #partilhator a:visited, #partilhator a:link {text-decoration: none; margin: 0; padding: 0; background-color: transparent;}
 #partilhator .partilhator_icone {margin-right:${espaco_ico}px; background-color: transparent; display: inline-block}
-#partilhator .partilhator_facebook { position: relative; top: $margemSuperiorFacebook; display: inline-block}
+#partilhator .partilhator_facebook { position: relative; top: $margemSuperiorFacebook; display: inline-block; margin-left: 5px;}
 #partilhator .partilhator_twitter { position: relative; top: $margemSuperiorTwitter; text-align: left; display: inline-block;}
 #partilhator .partilhator_pinit { margin: $margemSuperiorPinit 5px $margemInferiorPinit 5px; text-align: left; display: inline-block;}
 REMATE;

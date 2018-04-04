@@ -36,6 +36,7 @@
 		<fields name="params" addfieldpath="/plugins/content/partilhator/elements">
 			<fieldset name="basic">
 				<field type="title" default="DISPLAY_TIT" />
+				<field name="incluir_categorias" type="text" default="" label="INCLUDE_CAT" description="INCLUDE_CAT_DESC" />
 				<field name="excluir_categorias" type="text" default="" label="EXCLUDE_CAT" description="EXCLUDE_CAT_DESC" />
 				<field name="excluir_artigos" type="text" default="" label="EXCLUDE_ART" description="EXCLUDE_ART_DESC" />
 				<field type="title" default="POSITION_TIT" />
